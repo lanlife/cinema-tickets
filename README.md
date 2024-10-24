@@ -16,8 +16,8 @@ This service handles the purchase of cinema tickets with different types (Adult,
 
 ## 📋 Requirements
 
-- Node.js 20.0.0 or later
-- npm 9.0.0 or later
+- Node.js 20.17.0 or later
+- npm 10.8.2 or later
 
 ## 🚀 Installation
 
@@ -32,31 +32,6 @@ cd cinema-ticket-service
 npm install
 ```
 
-## 💻 Project Structure
-
-```
-src/
-├── pairtest/
-│   ├── lib/
-│   │   ├── InvalidPurchaseException.js
-│   │   └── TicketTypeRequest.js
-│   ├── thirdparty/
-│   │   ├── paymentgateway/
-│   │   │   └── TicketPaymentService.js
-│   │   └── seatbooking/
-│   │       └── SeatReservationService.js
-│   └── TicketService.js
-test/
-└── TicketService.test.js
-```
-
-## 🎫 Ticket Types and Pricing
-
-| Ticket Type | Price | Seat Allocation |
-|-------------|-------|-----------------|
-| ADULT       | £25   | Yes            |
-| CHILD       | £15   | Yes            |
-| INFANT      | £0    | No             |
 
 ## 📜 Business Rules
 
@@ -124,30 +99,7 @@ NODE_ENV=development
 npm install --save-dev @babel/core @babel/preset-env jest
 ```
 
-### Setting Up Babel
 
-Create a `.babelrc` file in the root directory:
-```json
-{
-  "presets": ["@babel/preset-env"]
-}
-```
-
-### Package.json Scripts
-
-Add these scripts to your `package.json`:
-```json
-{
-  "scripts": {
-    "start": "node src/index.js",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "lint": "eslint src/**/*.js",
-    "format": "prettier --write 'src/**/*.js'"
-  }
-}
-```
 
 ## 🚨 Error Handling
 
@@ -157,7 +109,7 @@ The service throws `InvalidPurchaseException` for:
 - Business rule violations
 - Validation failures
 
-## 🔒 API Reference
+
 
 ### TicketService
 
@@ -182,8 +134,4 @@ Creates a new ticket request.
 - `type` (String): Ticket type ('ADULT', 'CHILD', or 'INFANT')
 - `noOfTickets` (Number): Number of tickets requested
 
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
